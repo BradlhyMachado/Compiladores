@@ -1,0 +1,5 @@
+funcion operaciones(){
+  a = 1 + 5;
+  b = a + 6;
+  c = b / 2;
+}

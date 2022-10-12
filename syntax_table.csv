@@ -1,0 +1,17 @@
+Nonterminal,funcion,id,iz_paren,der_paren,iz_llave,der_llave,coma,pt_coma,igual,leer,imprimir,hash,entero,numerico,suma,resta,division,multiplicacion,y,o,si,sino,mientras,mayor_que,menor_que,mayor_igual,menor_igual,igualdad,diferente,fu,IN,$
+PROGRAM,PROGRAM -> FUNC SENT,PROGRAM -> FUNC SENT,,,,,,,,PROGRAM -> FUNC SENT,PROGRAM -> FUNC SENT,,PROGRAM -> FUNC SENT,,,,,,,,PROGRAM -> FUNC SENT,PROGRAM -> FUNC SENT,PROGRAM -> FUNC SENT,,,,,,,PROGRAM -> FUNC SENT,,PROGRAM -> FUNC SENT
+FUNC,FUNC -> funcion id iz_paren PAR der_paren iz_llave SENT der_llave FUNC,FUNC -> '',,,,,,,,FUNC -> '',FUNC -> '',,FUNC -> '',,,,,,,,FUNC -> '',FUNC -> '',FUNC -> '',,,,,,,FUNC -> '',,FUNC -> ''
+PAR,,PAR -> id PAR,,PAR -> '',,,PAR -> coma id PAR,,,,,,,,,,,,,,,,,,,,,,,,,
+SENT,,SENT -> DECL SENT,,,,SENT -> '',,,,SENT -> INP SENT,SENT -> OUT SENT,,SENT -> DECL SENT,,,,,,,,SENT -> EST SENT,SENT -> EST SENT,SENT -> EST SENT,,,,,,,SENT -> FUN SENT,,SENT -> ''
+DECL,,DECL -> id igual EXP DECL' pt_coma,,,,,,,,,,,DECL -> TYPE id DE pt_coma,,,,,,,,,,,,,,,,,,,
+DE,,,,,,,,DE -> '',DE -> igual EXP,,,,,,,,,,,,,,,,,,,,,,,
+DECL',,,,,,,,DECL' -> '',,,,,,,DECL' -> OP EXP,DECL' -> OP EXP,DECL' -> OP EXP,DECL' -> OP EXP,DECL' -> OP EXP,DECL' -> OP EXP,,,,,,,,,,,,
+INP,,,,,,,,,,INP -> leer EXP pt_coma,,,,,,,,,,,,,,,,,,,,,,
+OUT,,,,,,,,,,,OUT -> imprimir iz_paren OUT' der_paren pt_coma,,,,,,,,,,,,,,,,,,,,,
+OUT',,OUT' -> EXP,,,,,,,,,,OUT' -> hash id hash,,OUT' -> EXP,,,,,,,,,,,,,,,,,,
+TYPE,,,,,,,,,,,,,TYPE -> entero,,,,,,,,,,,,,,,,,,,
+EXP,,EXP -> id,,,,,,,,,,,,EXP -> numerico,,,,,,,,,,,,,,,,,,
+OP,,,,,,,,,,,,,,,OP -> suma,OP -> resta,OP -> division,OP -> multiplicacion,OP -> y,OP -> o,,,,,,,,,,,,
+EST,,,,,,,,,,,,,,,,,,,,,EST -> si iz_paren EXP COM EXP der_paren iz_llave SENT der_llave,EST -> sino iz_llave SENT der_llave,EST -> mientras iz_paren EXP COM EXP der_paren iz_llave SENT der_llave,,,,,,,,,
+COM,,,,,,,,,,,,,,,,,,,,,,,,COM -> mayor_que,COM -> menor_que,COM -> mayor_igual,COM -> menor_igual,COM -> igualdad,COM -> diferente,,,
+FUN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,FUN -> fu id iz_paren IN der_paren pt_coma,,
